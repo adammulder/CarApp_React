@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Link, HashRouter } from 'react-router-dom'
 import Sidebar from './components/Sidebar'
 import routes from "./config/routes"
 import { Provider } from 'react-redux'
@@ -16,7 +16,7 @@ function App() {
       redirect_uri: window.location.origin
     }}
     >
-    <BrowserRouter>
+    <HashRouter>
     <Sidebar />
         <Provider store={store}>
           <Routes>
@@ -31,7 +31,7 @@ function App() {
             ))}
           </Routes>
           </Provider>
-    </BrowserRouter>
+    </HashRouter>
     </Auth0Provider>
   )
 }
